@@ -73,9 +73,11 @@ ZSH_THEME="awesomepanda"
 plugins=()
 
 alias gd="git diff"
-alias gds="git diff --stat"
-alias gl="git log"
 alias gs="git status"
+alias gds="git diff --staged"
+alias gdst="git diff --stat"
+alias gl="git log"
+alias be="bundle exec"
 
 
 source $ZSH/oh-my-zsh.sh
@@ -111,3 +113,6 @@ export NVM_DIR="$HOME/.nvm"
 [ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
 
 eval "$(rbenv init - zsh)"
+export PYENV_ROOT="$HOME/.pyenv"
+command -v pyenv >/dev/null || export PATH="$PYENV_ROOT/bin:$PATH"
+eval "$(pyenv init -)"
